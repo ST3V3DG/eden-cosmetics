@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -18,7 +19,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${switzer.className} antialiased`}>{children}</body>
+			<body className={`${switzer.className} antialiased`}>
+				{children}
+				<Analytics />
+			</body>
 		</html>
 	);
 }
