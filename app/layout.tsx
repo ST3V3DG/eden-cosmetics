@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const switzer = localFont({
 	src: "../public/fonts/Switzer-Regular.woff2",
@@ -21,6 +22,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${switzer.className} antialiased`}>
 				{children}
+				<SpeedInsights />
 				<Analytics />
 			</body>
 		</html>
